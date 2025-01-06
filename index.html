@@ -6,7 +6,7 @@
         content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis</title>
+  <title>ManiSkill++: Some Improvements for ManiSkill</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -65,7 +65,7 @@
           <p><font color="black">
             <span>Wenkun He<sup>*, 1</sup></span>  ,
             <span>Yikai Zheng<sup>*, 1</sup></span>  ,
-            <span>Yipeng Dent<sup>*, 1</sup></span>
+            <span>Yipeng Deng<sup>*, 1</sup></span>
           </font></p>
           <p><font color="black" style="font-size: smaller;">
             <sup>1</sup> Tsinghua University
@@ -76,17 +76,6 @@
   </div>
 </section>
 
-<!-- Teaser -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img id="teaser" src="./static/images/teaser.png">
-      <h2 class="subtitle has-text-centered">
-        <p><b><font color="orange">Sync</font><font color="blue">Diff</font> is a unified framework synthesizing <font color="red">synchronized</font> multi-body interaction motions with <font color="red">any number</font> of hands, humans, and rigid objects. The key innovations in <font color="orange">Sync</font><font color="blue">Diff</font> are two novel multi-body motion synchronization mechanisms, namely the <font color="red">alignment scores</font> and corresponding <font color="red">alignment loss function</font>, and <font color="red">explicit synchronization</font> strategy in inference. These mechanisms can help <font color="orange">Sync</font><font color="blue">Diff</font> synthesize realistic, coordinated, and physically plausible motions in various interaction scenarios.</p>
-      </h2>
-    </div>
-  </div>
-</section>
 
 <!-- Abstract -->
 <section class="section">
@@ -95,7 +84,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Synthesizing realistic human-object interaction motions is a critical problem in VR/AR and human animation. Unlike the commonly studied scenarios involving <font color="red">a single human or hand</font> interacting with <font color="red">one object</font>, we address a more <font color="red">generic</font> multi-body setting with <font color="red">arbitrary numbers of humans, hands, and objects</font>. This complexity introduces significant challenges in <font color="red">synchronizing motions</font> due to the <font color="red">high correlations</font> and <font color="red">mutual influences</font> among bodies. To address these challenges, we introduce <font color="orange">Sync</font><font color="blue">Diff</font>, a novel method for multi-body interaction synthesis using <font color="red">a synchronized motion diffusion</font> strategy. <font color="orange">Sync</font><font color="blue">Diff</font> employs <font color="red">a single diffusion model</font> to capture the joint distribution of multi-body motions. To enhance motion fidelity, we propose <font color="red">a frequency-domain motion decomposition</font> scheme. Additionally, we introduce a new set of <font color="red">alignment scores</font> to emphasize the synchronization of different body motions. <font color="orange">Sync</font><font color="blue">Diff</font> <font color="red">jointly optimizes</font> both <font color="red">data sample likelihood</font> and <font color="red">alignment likelihood</font> through an <font color="red">explicit synchronization</font> strategy. Extensive experiments across four datasets with various multi-body configurations demonstrate the superiority of <font color="orange">Sync</font><font color="blue">Diff</font> over existing state-of-the-art motion synthesis methods.</p>
+          <p>We utilize the ManiSkill3 framework to <font color="red">improve upon</font> several classic Reinforcement Learning/Imitative Learning algorithms, which enhances the robot's success rate in task handling to some extent. To test the high scalability and generalizability of <font color="red">reward design techniques</font> in Reinforcement Learning, we designed a series of <font color="red">long-horizon tasks</font> and corresponding multi-stage reward functions, using objects from ManiSkill3 and other items of our own selection, achieving high success rates. Additionally, we <font color="red">analyze the underlying reasons</font> for the varying success rates of different algorithms in handling different tasks, originating from the principles of the algorithms.</p>
         </div>
       </div>
     </div>
@@ -404,7 +393,6 @@
       <div class="column">
         <div class="content">
           <p><font color="black">Wenkun He: wenkunhe2003@hotmail.com</font></p>
-          <p><font color="black">Li Yi: ericyi0124@gmail.com</font></p>
         </div>
       </div>
     </div>
