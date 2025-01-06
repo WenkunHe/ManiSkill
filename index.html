@@ -108,10 +108,38 @@
       <p><b>We will present qualitative results in the order from main text.</h2>
       <p><b><font color="blue">4.1 Comparison Results for Extracting Imitation Learning Priors</font></b></p>
       <p><b><font color="pink">4.2 Comparison Results for Distillation Method</font></b></p>
-      <p><b><font color="orange">5.1 Illustration for Long-horizon Task Design with Refrigerator</font></b></p>
+      <p><b><font color="orange">5.1 Illustration for Long-horizon Task Design</font></b></p>
       <p><b><font color="purple">5.2 Challenges in Long-horizon Task Design</font></b></p>
       <p><b><font color="green">5.3 Demos of Successful Manipulation in Manually-designed Tasks</font></b></p>
     </div>
+  </div>
+</section>
+
+<!-- 4.1 -->
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3" style="text-align: center;">
+      <font color="blue">4.1 Comparison Results for Extracting Imitation Learning Priors</font>
+      <h4 class="title is-3"></h4>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="blue">Pipeline</font></h3>
+            <img id="brush_shapes" src="./static/images/arch1.png" alt="Description" height="100%">
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="blue">Place Sphere</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/distillation/placesphere.mp4" type="video/mp4">
+            </video>
+            Due to the lack of state information, the pure-RGB method <font color="red">fails to accurately release</font> the ball at the target position. Conversely, due to the lack of RGB information, the pure-state method <font color="red">does not open the gripper</font> even after <font color="red">the ball reaches the target position</font>.
+          </div>
+        </div>
+      </div>
   </div>
 </section>
 
@@ -121,6 +149,14 @@
     <h2 class="title is-3" style="text-align: center;">
       <font color="pink">4.2 Comparison Results for Distillation Method</font>
       <h4 class="title is-3"></h4>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="pink">Pipeline</font></h3>
+            <img id="brush_shapes" src="./static/images/arch2.png" alt="Description" height="100%">
+          </div>
+        </div>
+      </div>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
@@ -172,7 +208,7 @@
 <section class="section">
   <div class="container is-max-desktop content">
     <h2 class="title is-3" style="text-align: center;">
-      <font color="orange">5.1 Task Design</font>
+      <font color="orange">5.1 Illustration for Long-horizon Task Design</font>
       <h4 class="title is-3"></h4>
       <div class="columns is-centered">
         <div class="column">
