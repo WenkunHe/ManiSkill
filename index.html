@@ -49,7 +49,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><font color="orange">Sync</font><font color="blue">Diff</font>: <font color="orange">Sync</font>hronized Motion <font color="blue">Diff</font>usion for Multi-Body Human-Object Interaction Synthesis</h1>
+          <h1 class="title is-1 publication-title"><font color="orange">Mani</font><font color="blue">Skill</font>++:<br> Some Improvements for <font color="orange">Mani</font><font color="blue">Skill</font></h1>
 
         </div>
       </div>
@@ -63,15 +63,12 @@
       <div class="column">
         <div class="content" style="text-align: center; font-size: 1.5em;">
           <p><font color="black">
-            <span>Wenkun He<sup>1, 2</sup></span>  ,
-            <span>Yun Liu<sup>1, 2, 3</sup></span>  ,
-            <span>Ruitao Liu<sup>1</sup></span>  ,
-            <span>Li Yi<sup>†, 1, 2, 3</sup></span>
+            <span>Wenkun He<sup>*, 1</sup></span>  ,
+            <span>Yikai Zheng<sup>*, 1</sup></span>  ,
+            <span>Yipeng Dent<sup>*, 1</sup></span>
           </font></p>
           <p><font color="black" style="font-size: smaller;">
-            <sup>1</sup> Tsinghua University, 
-            <sup>2</sup> Shanghai Qi Zhi Institute,
-            <sup>3</sup> Shanghai Artificial Intelligence Laboratory
+            <sup>1</sup> Tsinghua University
           </font></p>
         </div>
       </div>
@@ -146,49 +143,130 @@
   </div>
 </section>
 
-<!-- TACO -->
+<!-- 5.1 -->
 <section class="section">
   <div class="container is-max-desktop content">
-    <h2 class="title is-3"><font color="orange">TACO</font></h2>
+    <h2 class="title is-3" style="text-align: center;">
+      <font color="orange">5.1 Task Design</font>
       <h4 class="title is-3"></h4>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="orange">Comparison to MACS & DiffH2O (12 Samples)</font></h3>
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/challenges/0_collision_nointo.mp4" type="video/mp4">
             </video>
+            Experimental results indicate that in refrigerator-related long-horizon tasks, the gripper <font color="red">cannot reach inside</font> the inner space regardless of its approaching pose. We suspect that there might be an error in the <font color="red">collision mesh detection</font>, so we moved the object placement point to <font color="red">the top of the refrigerator</font>.
           </div>
         </div>
       </div>
+  </div>
+</section>
+
+<!-- 5.2 -->
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3" style="text-align: center;">
+      <font color="purple">5.2 Challenges in Long-horizon Task Design</font>
+      <h4 class="title is-3"></h4>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="orange">Comparison to w/o decompose (6 Samples)</font></h3>
+            <h3 class="title" style="text-align: center;"><font color="purple">Coordinating Mobility and Grasping</font></h3>
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/challenges/1_mobility_grasping.mp4" type="video/mp4">
             </video>
-            w/o decompose causes <font color="red">oversmooth</font> trajectories. Two objects often remain <font color="red">relatively stable</font>.</h2>
+            Mobile manipulator finds it challenging to <font color="red">simultaneously</font> learn <font color="red">upper-body grasping</font> and <font color="red">lower-body movement</font>.
           </div>
         </div>
       </div>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="orange">Comparison to w/o exp sync & w/o align loss (12 Samples)</font></h3>
+            <h3 class="title" style="text-align: center;"><font color="purple">Challenges for Object Release</font></h3>
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/challenges/2_object_release.mp4" type="video/mp4">
             </video>
-            <p>w/o exp sync or w/o align loss lead to <font color="red">contact loss</font>, <font color="red">unsynchronization</font>, or <font color="red">abnormal shakings</font>.</h2>
+            Mobile manipulator is reluctant to <font color="red">release the object</font>, even after <font color="red">reaching the target position</font> (The white ball in the video).
           </div>
         </div>
       </div>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="orange">Gallery (24 Samples)</font></h3>
+            <h3 class="title" style="text-align: center;"><font color="purple">Ensuring Controlled Object Falldown in Noisy Environments</font></h3>
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/challenges/3_slide_from_edge.mp4" type="video/mp4">
+            </video>
+            The determination of <font color="red">feasible object release areas</font> is too <font color="red">lenient</font>, causing the object to <font color="red">slide off from the edges</font>.
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+            <div class="content">
+              <h3 class="title" style="text-align: center;">
+                  <font color="purple">Opposite Goals of Opening and Shutting</font>
+              </h3>
+              <div style="display: flex; justify-content: center;">
+                  <video id="brush_shapes" autoplay controls muted loop playsinline width="450" height="450">
+                      <source src="./static/videos/challenges/4_opposite_goals.mp4" type="video/mp4">
+                  </video>
+              </div>
+              <br>
+              Due to the <font color="red">opposite reward</font> for opening and closing the drawer, the mobile manipulator is <font color="red">hesitant to fully close it</font>, or the drawer is closed <font color="red">too quickly</font>, causing it to <font color="red">rebound</font>.
+            </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="purple">Cheating by Bypassing Container Manipulation</font></h3>
+            <div style="display: flex; justify-content: center;">
+              <video id="brush_shapes" autoplay controls muted loop playsinline width="450" height="450">
+                <source src="./static/videos/challenges/5_cheating.mp4" type="video/mp4">
+              </video>
+            </div>
+            <br>
+            TMobile manipulator cheats by <font color="red">directly releasing the object</font> above an <font color="red">open-top</font> drawer or refrigerator, <font color="red">bypassing</font> the process of <font color="red">opening and closing</font> the drawer/door.
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="purple">Challenges in Rotating Door Closure</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/challenges/6_rotating_door_closure.mp4" type="video/mp4">
+            </video>
+            Mobile manipulator has difficulty <font color="red">reaching the handle</font> located <font color="red">on the back</font> of the refrigerator door.
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- 5.3 -->
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3" style="text-align: center;">
+      <font color="green">5.3.1 Visualization Results for Short-horizon Tasks</font>
+      <h4 class="title is-3"></h4>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="green">Refrigerator without Handle</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_horizon_tasks/refrigerator1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="green">Refrigerator with Handle</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_horizon_tasks/refrigerator2.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -196,51 +274,17 @@
   </div>
 </section>
 
-<!-- CORE4D -->
 <section class="section">
   <div class="container is-max-desktop content">
-    <h2 class="title is-3"><font color="green">CORE4D</font></h2>
+    <h2 class="title is-3" style="text-align: center;">
+      <font color="green">5.3.2 Visualization Results for Long-horizon Tasks</font>
       <h4 class="title is-3"></h4>
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="green">Comparison to ComMDM & InterGen & OMOMO (12 Samples)</font></h3>
+            <h3 class="title" style="text-align: center;"><font color="green">Drawer+Cube</font></h3>
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/CORE4D/CORE4D_baseline.mp4" type="video/mp4">
-            </video>
-            <p>Among the three methods, OMOMO, with its <font color="red">stagewise</font> diffusion, relatively ensures the hand-object alignment, but still falls short compared to our <font color="red">synchronization</font> strategies. These three methods often fail to complete tasks successfully because they lack the <font color="red">joint distribution and optimization</font> using <font color="red">a single diffusion model</font>. This might cause <font color="red">object trajectories</font> to be <font color="red">unadvantageous</font>, further leading to <font color="red">ineffective collaboration</font> for two humans.
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="green">Comparison to w/o decompose (6 Samples)</font></h3>
-            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/CORE4D/CORE4D_dcac.mp4" type="video/mp4">
-            </video>
-            <p>w/o decompose induces <font color="red">unnatural walking poses</font>(e.g., sliding on ground), and sometimes <font color="red">unnatural joint rotations</font>. </h2>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="green">Comparison to w/o exp sync & w/o align loss (4 Samples)</font></h3>
-            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/CORE4D/CORE4D_expimp.mp4" type="video/mp4">
-            </video>
-            <p><b><font color="red">Synchronization mechanisms</font> still play a significant role in <font color="red">human body-object</font> interaction synthesis.</h2>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column">
-          <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="green">Comparison to w/o exp sync (6 Samples)</font></h3>
-            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/CORE4D/CORE4D_exp.mp4" type="video/mp4">
+              <source src="./static/videos/long_horizon_tasks/drawer+cube.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -248,9 +292,39 @@
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="green">Gallery (24 Samples)</font></h3>
+            <h3 class="title" style="text-align: center;"><font color="green">Drawer+Duck</font></h3>
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/CORE4D/CORE4D_gallery.mp4" type="video/mp4">
+              <source src="./static/videos/long_horizon_tasks/drawer+duck.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="green">Drawer+Pyramid</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_horizon_tasks/drawer+pyramid.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="green">Refrigerator+Cube</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_horizon_tasks/refrigerator+cube.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="green">Refrigerator+Apple</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/long_horizon_tasks/refrigerator+apple.mp4" type="video/mp4">
             </video>
           </div>
         </div>
