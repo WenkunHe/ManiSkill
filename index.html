@@ -132,11 +132,33 @@
       <div class="columns is-centered">
         <div class="column">
           <div class="content">
-            <h3 class="title" style="text-align: center;"><font color="blue">Place Sphere</font></h3>
+            <h3 class="title" style="text-align: center;"><font color="blue">Poke Cube</font></h3>
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/distillation/placesphere.mp4" type="video/mp4">
+              <source src="./static/videos/il_prior/pokecube.mp4" type="video/mp4">
             </video>
-            Due to the lack of state information, the pure-RGB method <font color="red">fails to accurately release</font> the ball at the target position. Conversely, due to the lack of RGB information, the pure-state method <font color="red">does not open the gripper</font> even after <font color="red">the ball reaches the target position</font>.
+            BC adjusted by PPO (Our Method) will not let the cube <font color="red">be pushed out of the boundary</font> and knows <font color="red">when to let go of the stick</font> at the appropriate moment when the cube has been placed in the right position.
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="blue">Pull Cube</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/il_prior/pullcube.mp4" type="video/mp4">
+            </video>
+            Our Method can accurately place the cube in the correct position even when <font color="red">the line of sight is obstructed</font>.
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h3 class="title" style="text-align: center;"><font color="blue">Pick Cube</font></h3>
+            <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/il_prior/pickcube.mp4" type="video/mp4">
+            </video>
+            In the tasks where all three methods have high success rates, Our Method <font color="red">quickly and accurately</font> brings the cube to the target position.
           </div>
         </div>
       </div>
