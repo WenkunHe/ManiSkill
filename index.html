@@ -136,7 +136,7 @@
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/il_prior/pokecube.mp4" type="video/mp4">
             </video>
-            BC adjusted by PPO (Our Method) will not let the cube <font color="red">be pushed out of the boundary</font> and knows <font color="red">when to let go of the stick</font> at the appropriate moment when the cube has been placed in the right position.
+            BC adjusted by PPO (Our Method) will not let the cube <font color="red">be pushed out of the boundary</font> and knows <font color="red">when to let go of the stick</font> at the appropriate moment when the cube has been placed in the right position. 
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/il_prior/pullcube.mp4" type="video/mp4">
             </video>
-            Our Method can accurately place the cube in the correct position even when <font color="red">the line of sight is obstructed</font>.
+            Our Method can accurately place the cube in the correct position even when <font color="red">the line of sight is obstructed</font>. Pure PPO <font color="red">overdoses</font> because it aims to <font color="red">maximize early-stage rewards as quickly as possible</font>.
           </div>
         </div>
       </div>
@@ -158,7 +158,7 @@
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/il_prior/pickcube.mp4" type="video/mp4">
             </video>
-            In the tasks where all three methods have high success rates, Our Method <font color="red">quickly and accurately</font> brings the cube to the target position.
+            In the tasks where all three methods have high success rates, Our Method <font color="red">quickly and accurately</font> brings the cube to the target position. Pure PPO <font color="red">overdoses</font> because it aims to <font color="red">maximize early-stage rewards as quickly as possible</font>.
           </div>
         </div>
       </div>
@@ -186,7 +186,7 @@
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/distillation/placesphere.mp4" type="video/mp4">
             </video>
-            Due to the lack of state information, the pure-RGB method <font color="red">fails to accurately release</font> the ball at the target position. Conversely, due to the lack of RGB information, the pure-state method <font color="red">does not open the gripper</font> even after <font color="red">the ball reaches the target position</font>.
+            Due to the lack of state information, the pure-RGB method <font color="red">fails to accurately release</font> the ball at the target position. Conversely, due to the lack of RGB information, the pure-state method <font color="red">does not open the gripper</font> even after <font color="red">the ball reaches the target position</font>. Pure PPO overdoses because it aims to <font color="red">maximize early-stage rewards as quickly as possible</font>.
           </div>
         </div>
       </div>
@@ -353,7 +353,7 @@
 <section class="section">
   <div class="container is-max-desktop content">
     <h2 class="title is-3" style="text-align: center;">
-      <font color="green">5.3.1 Visualization Results for Short-horizon Tasks</font>
+      <font color="green">5.3.1 Visualization Results for Short-horizon Tasks (PPO)</font>
       <h4 class="title is-3"></h4>
       <div class="columns is-centered">
         <div class="column">
@@ -381,7 +381,7 @@
 <section class="section">
   <div class="container is-max-desktop content">
     <h2 class="title is-3" style="text-align: center;">
-      <font color="green">5.3.2 Visualization Results for Long-horizon Tasks</font>
+      <font color="green">5.3.2 Visualization Results for Long-horizon Tasks (PPO)</font>
       <h4 class="title is-3"></h4>
       <div class="columns is-centered">
         <div class="column">
@@ -420,6 +420,7 @@
             <video id="brush_shapes" autoplay controls muted loop playsinline height="100%">
               <source src="./static/videos/long_horizon_tasks/refrigerator+cube.mp4" type="video/mp4">
             </video>
+            PPO can even learn to take advantage of the <font color="red">rebound from the refrigerator door</font>, quickly placing the object in position before the door closes, in order to <font color="red">maximize early rewards</font>.
           </div>
         </div>
       </div>
